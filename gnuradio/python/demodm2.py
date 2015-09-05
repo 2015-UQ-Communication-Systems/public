@@ -66,5 +66,6 @@ class demodm2(gr.basic_block):
 
            # set output (note it is reversed like in the MATLAB/Octave code)
            output_items[0][o] = 0 if decide > self.my_threshold else 1;
-
+           
+        self.consume(0, len(output_items[0]))
         return len(output_items[0])
